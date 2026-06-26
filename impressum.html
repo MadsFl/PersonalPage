@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #ffffff;
+            background: linear-gradient(-45deg, #0f172a, #3b82f6, #8b5cf6, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        h1 { text-align: center; margin-bottom: 30px; font-weight: 800; color: #60a5fa; }
+        h2 { font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; color: #cbd5e1; }
+        p { margin-bottom: 15px; font-weight: 300; line-height: 1.6; color: #e2e8f0; }
+        a.back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        a.back-link:hover { color: #60a5fa; }
+        a.back-link i { margin-right: 8px; }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Zurück zur Startseite</a>
+        
+        <h1>Impressum</h1>
+
+        <h2>Angaben gemäß § 5 DDG</h2>
+        <p>
+            Mads Flemming<br>
+            Eichendorffstraße 7<br>
+            24116 Kiel<br>
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+            E-Mail: impressum@ds-flemming.de
+        </p>
+
+        <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </div>
+
+</body>
+</html>

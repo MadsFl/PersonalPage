@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #ffffff;
+            background: linear-gradient(-45deg, #0f172a, #3b82f6, #8b5cf6, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        h1 { text-align: center; margin-bottom: 30px; font-weight: 800; color: #60a5fa; }
+        h2 { font-size: 1.2rem; margin-top: 30px; margin-bottom: 10px; color: #cbd5e1; }
+        p { margin-bottom: 15px; font-weight: 300; line-height: 1.6; color: #e2e8f0; font-size: 0.95rem; }
+        a.back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #ffffff;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        a.back-link:hover { color: #60a5fa; }
+        a.back-link i { margin-right: 8px; }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Zurück zur Startseite</a>
+        
+        <h1>Datenschutzerklärung</h1>
+
+        <h2>1. Datenschutz auf einen Blick</h2>
+        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+
+        <h2>2. Hosting und Content Delivery Networks (CDN)</h2>
+        <p>Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten handeln, die über eine Website generiert werden.</p>
+        
+        <p><strong>jsDelivr & FontAwesome CDN</strong><br>
+        Wir nutzen zur Auslieferung von Inhalten (wie Scripts für Animationen oder Icons) das Content Delivery Network jsDelivr und cdnjs. Ein CDN ist ein Dienst, mit dessen Hilfe Inhalte unserer Website schneller ausgeliefert werden. Hierbei wird die IP-Adresse des Nutzers an die Server des CDN-Anbieters übermittelt.</p>
+
+        <h2>3. Google Web Fonts</h2>
+        <p>Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Web Fonts, die von Google bereitgestellt werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis darüber, dass über Ihre IP-Adresse diese Website aufgerufen wurde.</p>
+
+        <h2>4. Verantwortliche Stelle</h2>
+        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website entnehmen Sie bitte dem Impressum dieser Website.</p>
+    </div>
+
+</body>
+</html>

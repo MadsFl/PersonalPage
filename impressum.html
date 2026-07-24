@@ -3,78 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Impressum - Portfolio</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* --- BASIC RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
+            /* Using the same background for consistency */
+            background-image: url('retroback.gif'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            image-rendering: pixelated;
+            
+            font-family: "MS Sans Serif", "Tahoma", "Verdana", sans-serif;
             min-height: 100vh;
+            padding-bottom: 50px; 
+            text-align: center;
+        }
+
+        /* --- WINDOWS 95 WINDOW DESIGN --- */
+        .win95-window {
+            width: 80%;
+            max-width: 600px; 
+            margin: 50px auto;
+            background-color: #c0c0c0; 
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-bottom: 2px solid #000000;
+            border-right: 2px solid #000000;
+            box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf;
+            padding: 2px;
+            color: black;
+            text-align: left; 
+        }
+
+        .win95-titlebar {
+            background-color: #000080; 
+            color: white;
+            padding: 2px 4px;
+            font-weight: bold;
+            font-size: 14px;
             display: flex;
+            justify-content: space-between; 
             align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            color: #ffffff;
-            background: linear-gradient(-45deg, #0f172a, #3b82f6, #8b5cf6, #0f172a);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        .win95-close-btn {
+            background-color: #c0c0c0;
+            color: black;
+            border-top: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 0 4px;
+            cursor: pointer;
+            text-decoration: none; /* For using it as a link back home */
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 50px 40px;
-            max-width: 800px;
-            width: 100%;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-            text-align: left;
+
+        .win95-close-btn:active {
+            border-top: 1px solid #000000;
+            border-left: 1px solid #000000;
+            border-bottom: 1px solid #ffffff;
+            border-right: 1px solid #ffffff;
         }
-        h1 { text-align: center; margin-bottom: 30px; font-weight: 800; color: #60a5fa; }
-        h2 { font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; color: #cbd5e1; }
-        p { margin-bottom: 15px; font-weight: 300; line-height: 1.6; color: #e2e8f0; }
-        a.back-link {
-            display: inline-flex;
-            align-items: center;
-            color: #ffffff;
-            text-decoration: none;
+
+        .win95-content {
+            padding: 15px;
+        }
+
+        .win95-content h1 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: black; 
+        }
+
+        .win95-content h2 {
+            font-size: 16px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .win95-content p {
+            line-height: 1.5;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        /* Navigation link inside the window */
+        .back-link {
+            display: inline-block;
             margin-bottom: 20px;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            color: blue;
         }
-        a.back-link:hover { color: #60a5fa; }
-        a.back-link i { margin-right: 8px; }
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
-        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Zurück zur Startseite</a>
+    <!-- Main Legal Window -->
+    <div class="win95-window">
+        <div class="win95-titlebar">
+            <span>Impressum.txt</span>
+            <!-- Close button links back to the main page -->
+            <a href="index.html" class="win95-close-btn">X</a>
+        </div>
         
-        <h1>Impressum</h1>
+        <div class="win95-content">
+            <a href="index.html" class="back-link">&lt;&lt; Zurück zur Startseite</a>
+            
+            <h1>Impressum</h1>
+            
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p>
+                Mads Flemming<br>
+                Eichendorffstraße 17<br>
+                24116 Kiel<br>
+            </p>
 
-        <h2>Angaben gemäß § 5 DDG</h2>
-        <p>
-            Mads Flemming<br>
-            Eichendorffstraße 7<br>
-            24116 Kiel<br>
-        </p>
+            <h2>Kontakt</h2>
+            <p>
+                E-Mail: impressum@mads.at
+            </p>
 
-        <h2>Kontakt</h2>
-        <p>
-            E-Mail: impressum@ds-flemming.de
-        </p>
-
-        <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
-        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <p>
+                Mads Flemming<br>
+                Eichendorffstraße 17<br>
+                24116 Kiel<br>
+            </p>
+        </div>
     </div>
 
 </body>

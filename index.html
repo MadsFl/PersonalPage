@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    
+    <title>Retro Y2K Website</title>
     <style>
-        /* --- Basis-Styling & Animierter Hintergrund --- */
+        /* --- BASIC RESET --- */
         * {
             margin: 0;
             padding: 0;
@@ -17,257 +13,178 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            color: #ffffff;
-            /* Animierter Gradient */
-            background: linear-gradient(-45deg, #0f172a, #3b82f6, #8b5cf6, #0f172a);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- Glassmorphismus Container --- */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 50px 40px;
+            background-image: url('retroback.gif'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            image-rendering: pixelated;
+            
+            /* Default font for the body */
+            font-family: "MS Sans Serif", "Tahoma", "Verdana", sans-serif;
+            min-height: 100vh;
+            
+            /* Padding to prevent elements from touching the bottom edge */
+            padding-bottom: 50px; 
             text-align: center;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
-            transform: translateY(50px);
-            opacity: 0;
-            animation: slideUp 1s ease forwards;
-            position: relative; /* Wichtig für Confetti-Positionierung (optional) */
-            z-index: 10;
         }
 
-        @keyframes slideUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+        /* --- WINDOWS 95 WINDOW DESIGN --- */
+        
+        .win95-window {
+            width: 80%;
+            max-width: 600px; /* Slightly narrower for an authentic look */
+            margin: 50px auto;
+            background-color: #c0c0c0; /* Classic Windows gray */
+            
+            /* 3D border effect */
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-bottom: 2px solid #000000;
+            border-right: 2px solid #000000;
+            box-shadow: inset -1px -1px #808080, inset 1px 1px #dfdfdf;
+            
+            padding: 2px;
+            color: black;
+            text-align: left; /* Windows UI text is left-aligned */
         }
 
-        /* --- Typografie --- */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
+        .win95-titlebar {
+            background-color: #000080; /* Classic dark Windows blue */
+            color: white;
+            padding: 2px 4px;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between; /* Separates title text and close button */
+            align-items: center;
+        }
+
+        .win95-close-btn {
+            background-color: #c0c0c0;
+            color: black;
+            border-top: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 0 4px;
+            cursor: pointer;
+        }
+
+        .win95-close-btn:active {
+            /* Pushed-in effect when clicking the close button */
+            border-top: 1px solid #000000;
+            border-left: 1px solid #000000;
+            border-bottom: 1px solid #ffffff;
+            border-right: 1px solid #ffffff;
+        }
+
+        .win95-content {
+            padding: 15px;
+        }
+
+        .win95-content h1 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: black; 
+        }
+        
+        .win95-content p {
+            line-height: 1.5;
             margin-bottom: 10px;
-            letter-spacing: 1px;
         }
 
-        h1 span {
-            color: #60a5fa; /* Helles Blau für den Namen */
-        }
-
-        .typewriter-container {
-            font-size: 1.2rem;
-            font-weight: 300;
-            height: 30px; /* Verhindert das Springen des Layouts */
-            margin-bottom: 30px;
-            color: #cbd5e1;
-        }
-
-        /* --- Coming Soon Badge mit pulsierendem Punkt --- */
-        .coming-soon-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer; /* Zeigt an, dass es klickbar ist */
-            transition: transform 0.2s ease, background 0.2s ease;
-            user-select: none; /* Verhindert das Markieren des Textes beim Klicken */
-        }
-
-        .coming-soon-badge:hover {
-            transform: scale(1.05); /* Leichter Zoom-Effekt beim Hover */
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .pulse-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #10b981; /* Smaragdgrün */
-            border-radius: 50%;
-            margin-right: 12px;
-            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-
-        /* --- Social Media Links --- */
-        .social-links {
+        /* --- DESKTOP ICONS --- */
+        
+        .desktop-icons-container {
+            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 40px; /* Space between the desktop icons */
         }
 
-        .social-links a {
-            color: #ffffff;
-            font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
+        .desktop-icon {
             display: flex;
+            flex-direction: column; /* Stacks image and text vertically */
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            text-decoration: none; /* Removes the underline from the link */
+            cursor: pointer;
+        }
+        
+        .desktop-icon img {
+            border: none; /* Prevents blue borders on image links in old browsers */
+            margin-bottom: 5px; /* Space between icon and label */
         }
 
-        .social-links a:hover {
-            background: #60a5fa;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(96, 165, 250, 0.4);
+        .icon-label {
+            color: white;
+            font-size: 12px;
+            /* Black pixel-shadow to ensure readability against colorful backgrounds */
+            text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        }
+        
+        /* Optional: Classic blue highlight when hovering over the icon */
+        .desktop-icon:hover .icon-label {
+            background-color: #000080; /* Windows blue */
+            text-shadow: none; /* Removes shadow when highlighted */
         }
 
-        /* --- Responsive Design --- */
-        @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            .typewriter-container { font-size: 1rem; }
-            .glass-card { padding: 40px 20px; }
+
+        /* --- FOOTER LINKS (LEGAL) --- */
+        .footer-links {
+            margin-top: 60px; /* Abstand zu den Icons */
+            padding-bottom: 20px;
+            font-size: 12px;
         }
 
-        /* --- Footer Links (Impressum & Datenschutz) --- */
-.legal-links {
-    margin-top: 30px;
-    font-size: 0.8rem;
-}
+        .footer-links a {
+            color: white;
+            text-decoration: none; /* Entfernt den Standard-Unterstrich */
+            margin: 0 10px;
+        }
 
-.legal-links a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    margin: 0 10px;
-}
-
-.legal-links a:hover {
-    color: #ffffff;
-}
+        .footer-links a:hover {
+            text-decoration: underline; /* Unterstrich nur, wenn man mit der Maus drüberfährt */
+        }
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
-        <div class="coming-soon-badge" id="confetti-btn">
-            <div class="pulse-dot"></div>
-            Hier kommt noch was
+    <!-- Main Windows 95 Container -->
+    <div class="win95-window">
+        <div class="win95-titlebar">
+            <span>Moin.exe</span>
+            <button class="win95-close-btn">X</button>
         </div>
-        
-        <h1>Moin, ich bin <span>Mads</span></h1>
-        
-        <div class="typewriter-container">
-            <span id="typewriter"></span><span class="cursor">|</span>
-        </div>
-
-        <div class="social-links">
-            <a href="#" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/MadsFl" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            <!--<a href="#" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>-->
-        </div>
-        <div class="legal-links">
-    <a href="impressum.html">Impressum</a>
-    <a href="datenschutz.html">Datenschutz</a>
+        <div class="win95-content">
+    <h1>Welcome to my Homepage!</h1>
+    <p>You've reached my digital portfolio. I use this space to archive my latest projects and code.</p>
+    <p><i>Pardon the digital dust – this site is heavily under construction. Please excuse any missing pixels!</i></p>
 </div>
     </div>
 
-    <script>
-        /* --- Konfetti-Effekt JS --- */
-        document.getElementById('confetti-btn').addEventListener('click', function(e) {
-            // Holt die Koordinaten des Klicks, damit das Konfetti genau dort startet
-            const rect = e.target.getBoundingClientRect();
-            const x = (rect.left + (rect.width / 2)) / window.innerWidth;
-            const y = (rect.top + (rect.height / 2)) / window.innerHeight;
+    <!-- Extra image mentioned in your previous code -->
+    <img src="construct.gif" alt="Construction GIF" style="margin-bottom: 20px;">
 
-            confetti({
-                particleCount: 120, // Anzahl der Schnipsel
-                spread: 80,         // Streuung
-                origin: { x: x, y: y }, // Startpunkt beim Badge
-                colors: ['#60a5fa', '#8b5cf6', '#10b981', '#ffffff'], // Farblich passend zum Design
-                disableForReducedMotion: true // Respektiert die Systemeinstellungen für Animationen
-            });
-        });
-
-        /* --- Schreibmaschinen-Effekt JS --- */
-        const texts = [
-            "Meine neue Website entsteht hier gerade.",
-            "Ich arbeite im Hintergrund an coolen Dingen.",
-            "Mein Ziel ist es eigene Projekte hier vorzustellen.",
-            "Schau bald wieder vorbei!"
-        ];
+    <!-- Desktop Icons (Rotating GIFs) -->
+    <div class="desktop-icons-container">
+        <!-- Email Icon -->
+        <a href="mailto:deine.adresse@email.de" class="desktop-icon">
+            <img src="email.gif" alt="Email Icon">
+            <span class="icon-label">Email</span>
+        </a>
         
-        let count = 0;
-        let index = 0;
-        let currentText = '';
-        let letter = '';
-        let isDeleting = false;
+        <!-- GitHub / CD Icon -->
+        <a href="https://github.com/MadsFl" class="desktop-icon">
+            <img src="macd.gif" alt="GitHub CD Icon">
+            <span class="icon-label">GitHub</span>
+        </a>
+    </div>
 
-        (function type() {
-            if (count === texts.length) {
-                count = 0;
-            }
-            currentText = texts[count];
-
-            if (isDeleting) {
-                letter = currentText.slice(0, --index);
-            } else {
-                letter = currentText.slice(0, ++index);
-            }
-
-            document.getElementById('typewriter').textContent = letter;
-
-            let typeSpeed = 100;
-
-            if (isDeleting) {
-                typeSpeed /= 2; // Schneller löschen
-            }
-
-            if (!isDeleting && letter.length === currentText.length) {
-                typeSpeed = 2000; // Pause am Ende des Satzes
-                isDeleting = true;
-            } else if (isDeleting && letter.length === 0) {
-                isDeleting = false;
-                count++;
-                typeSpeed = 500; // Pause bevor der nächste Satz beginnt
-            }
-
-            setTimeout(type, typeSpeed);
-        }());
-
-        /* Blinkender Cursor */
-        setInterval(() => {
-            const cursor = document.querySelector('.cursor');
-            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-        }, 500);
-    </script>
-
+    <!-- Footer / Legal Links -->
+    <div class="footer-links">
+        <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+    </div>
 </body>
 </html>
